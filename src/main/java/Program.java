@@ -29,9 +29,9 @@ public class Program {
 
                     System.out.printf("%s: at %d cm (in %d hops) \n",
                             curCockroach.getName(),
-                            curCockroach.distance,
+                            curCockroach.curDistance.get(),
                             curCockroach.hopCounter);
-                    if (curCockroach.distance >= raceDistance) {
+                    if (curCockroach.curDistance.get() >= raceDistance) {
                         endOfRace = true;
                         winner = curCockroach.getName();
                     }

@@ -1,9 +1,7 @@
-import java.util.Random;
 
 public class Cockroach extends Thread {
-    int distance = 0;
-    Random random = new Random();
-    final int maxHop = 11; // max distance increment per iteration, centimeters
+
+    Distance curDistance = new Distance();
     int hopCounter = 0;
 
     Cockroach(String name){
@@ -16,7 +14,7 @@ public class Cockroach extends Thread {
         try{
             while(!isInterrupted()){
                 Thread.sleep(1000);
-                distance += random.nextInt(maxHop);
+                curDistance.increment();
                 hopCounter++;
             }
         }
